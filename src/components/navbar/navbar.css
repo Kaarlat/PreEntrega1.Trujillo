@@ -1,0 +1,58 @@
+/* Diseño de navbar */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 50px;
+  z-index: 2000;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/* Botones */
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  background-color: rgba(204, 118, 61, 0.822);
+  color: aliceblue;
+  border-color: rgba(91, 58, 6, 0.699);
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: rgba(204, 118, 61, 0.822);
+  border-color: rgba(91, 58, 6, 0.699);
+}
+
+.button:active {
+  transform: scale(0.98);
+  filter: brightness(0.9);
+  background-color: rgba(204, 118, 61, 0.822);
+  border-color: rgba(91, 58, 6, 0.699);
+}
+
+/* Carrito */
+.cartWidget {
+  margin-right: 5rem;
+  margin-left: 0rem;
+  font-size: 2rem;
+  color: rgb(93, 65, 22);
+}
+/* Greeting */
+.greeting{
+  display: flex;
+  justify-content: center;
+  color: rgb(83, 40, 10);
+  font-size: 2rem;
+  align-items: center;
+  height: 100vh;
+}

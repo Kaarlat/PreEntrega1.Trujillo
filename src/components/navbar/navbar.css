@@ -47,12 +47,9 @@ header {
   font-size: 2rem;
   color: rgb(93, 65, 22);
 }
-/* Greeting */
-.greeting{
-  display: flex;
-  justify-content: center;
-  color: rgb(83, 40, 10);
-  font-size: 2rem;
-  align-items: center;
-  height: 100vh;
+
+/*Productos*/
+.products{
+  text-align: center;
+  padding: 10rem;
 }

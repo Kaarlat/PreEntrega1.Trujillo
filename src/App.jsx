@@ -11,14 +11,17 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+
         <Navbar handleCategoria={setCategoria} />
         <Routes>
           <Route path="/categorias" element={<ItemListContainer/>}/>
           <Route path="/categorias/figuras" element={<ItemListContainer />}/>
           <Route path="/categorias/regalos" element={<ItemListContainer />}/>
+          <Route path="/categorias/biodegradable" element={<ItemListContainer />}/>
 
           {/* <Route path="/" element={<ItemListContainer />}></Route> */}
         </Routes>
+
       </BrowserRouter>
     </>
   );

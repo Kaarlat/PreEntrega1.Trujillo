@@ -1,22 +1,15 @@
 // Se debe importar react y css con librería que se utilizará
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
-import { Button, Dropdown, Menu } from "antd";
-import { DownOutlined } from "@ant-design/icons";
-import {
-  CategoriasItemDesplegable,
-  EmpresasItemDesplegable,
-  ContactoItemDesplegable,
-} from "./itemDesplegable";
+import { Menu } from "antd";
+import {  CategoriasItemDesplegable} from "./itemDesplegable";
 import { CartWidget } from "../cartwidget/cartwidget";
-import { useNavigate } from "react-router-dom";
-
-// Agregar la item a Menu, para no repetir el código
-const createMenu = (items) => <Menu items={items} />;
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Si exporto desde el inicio se debe importar con llaves {}
 export const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation()
 
   const [current, setCurrent] = useState("0");
   const onClick = (e) => {
@@ -27,11 +20,20 @@ export const Navbar = () => {
       case "2":
         navigate("/categorias/regalos");
         break;
+        case "3":
+        navigate("/categorias/biodegradable");
+        break;
       default:
         break;
     }
     setCurrent(e.key);
   };
+
+  useEffect(() => {
+    if(location.pathname === "/categorias"){
+        setCurrent('0')
+    }
+  },[location.pathname])
 
   return (
     <header>
@@ -51,19 +53,6 @@ export const Navbar = () => {
             multiple
             items={CategoriasItemDesplegable}
           />
-          {/* <Button className="button">
-              Categorías <DownOutlined />
-            </Button> */}
-          {/* <Dropdown menu={{ items: EmpresasItemDesplegable }}>
-            <Button className="button">
-              Empresas <DownOutlined />
-            </Button>
-          </Dropdown>
-          <Dropdown menu={{ items: ContactoItemDesplegable }}>
-            <Button className="button">
-              Contacto <DownOutlined />
-            </Button>
-          </Dropdown> */}
         </div>
         <CartWidget />
       </nav>

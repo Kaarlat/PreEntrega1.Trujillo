@@ -1,6 +1,6 @@
 // css desde navbar.css
 import "../../components/navbar/navbar.css";
-import react, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getProducts } from "../../data/async-mocks";
 import { ItemList } from "../../components/ItemList/ItemList";
 import { useLocation } from "react-router-dom";
@@ -17,15 +17,21 @@ export const ItemListContainer = () => {
     getProducts()
       .then((res) => {
         setProducts(res)
-
-        if(location.pathname === "/categorias/figuras"){
-            setProducts(res.filter(p => p.category === "Figuras personalizadas"))
-        }else if(location.pathname === "/categorias/regalos"){
-            setProducts(res.filter(p => p.category === "Regalos"))
-
+        switch (location.pathname) {
+            case "/categorias/figuras":
+                setProducts(res.filter(p => p.category === "Figuras personalizadas"))
+            break;
+            case "/categorias/regalos":
+                setProducts(res.filter(p => p.category === "Regalos"))
+            break;
+            case "/categorias/biodegradable":
+                setProducts(res.filter(p => p.category === "Biodegradable"))
+            break;
+        
+            default:setProducts(res)
+                break;
         }
-
-      })
+     })
       .catch((e) => console.error(e));
   }, [location.pathname] );
 

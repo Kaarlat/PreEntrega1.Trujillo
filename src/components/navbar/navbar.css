@@ -5,7 +5,8 @@
 }
 
 header {
-  position: fixed;
+  position: relative;
+  height: 80px;
   top: 0;
   width: 100%;
   padding: 10px 50px;
@@ -15,6 +16,7 @@ header {
 
 .navbar {
   display: flex;
+  position: absolute;
   justify-content: space-between;
   align-items: center;
   width: 100%;

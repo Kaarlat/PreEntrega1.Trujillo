@@ -48,22 +48,6 @@ export const productList =[
         name: "Envases y Contenedores",
         price: "40 USD",
     },
-    {
-        id: 7,
-        category: "Premios",
-        description: "Premios en 3D: Reconoce el esfuerzo y la excelencia con trofeos y medallas personalizadas, impresas en 3D con diseños únicos y detallados.",
-        img: "/premios.jpg",
-        name: "Premios a elección",
-        price: "Su precio dependerá del tamaño y material",
-    },
-    {
-        id: 8,
-        category: "Galardones",
-        description: "Galardones exclusivos: Celebra logros excepcionales con elegantes galardones personalizados, diseñados para destacar y honrar a los mejores.",
-        img: "/premios.jpg",
-        name: "Galardones personalizados",
-        price: "Su precio dependerá del tamaño y material",
-    },
 ]
 
  export const getProducts = () => {

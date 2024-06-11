@@ -1,4 +1,9 @@
 /* Diseño de navbar */
+
+#home-logo {
+  cursor: pointer;
+}
+
 header {
   position: fixed;
   top: 0;

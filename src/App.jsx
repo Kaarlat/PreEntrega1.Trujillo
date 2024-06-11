@@ -5,17 +5,18 @@ import { ItemListContainer } from "./containers/ItemListContainer/ItemListContai
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const [categoria, setCategoria] = useState("todos");
+  const [categoria, setCategoria] = useState("/cateogrias");
   // const router = useReactRouter();
 
   return (
     <>
       <BrowserRouter>
         <Navbar handleCategoria={setCategoria} />
-
         <Routes>
-          <Route path="/" element={<div style={{marginTop: "5rem"}}>Página principal</div>}></Route>
-          <Route path="/regalos" element={<ItemListContainer />}></Route>
+          <Route path="/categorias" element={<ItemListContainer/>}/>
+          <Route path="/categorias/figuras" element={<ItemListContainer />}/>
+          <Route path="/categorias/regalos" element={<ItemListContainer />}/>
+
           {/* <Route path="/" element={<ItemListContainer />}></Route> */}
         </Routes>
       </BrowserRouter>

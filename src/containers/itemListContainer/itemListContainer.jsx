@@ -30,6 +30,6 @@ export const ItemListContainer = () => {
   }, [location.pathname] );
 
   return (
-    <>{products ? <ItemList products={products} /> : <div>Cargando..</div>}</>
+    <>{products ? <ItemList style={{width: "25%"}} products={products} /> : <div>Cargando..</div>}</>
   );
 };

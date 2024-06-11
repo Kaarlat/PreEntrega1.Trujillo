@@ -18,7 +18,7 @@ const createMenu = (items) => <Menu items={items} />;
 export const Navbar = () => {
   const navigate = useNavigate();
 
-  const [current, setCurrent] = useState("1");
+  const [current, setCurrent] = useState("0");
   const onClick = (e) => {
     switch (e.key) {
       case "1":
@@ -48,6 +48,7 @@ export const Navbar = () => {
             onClick={onClick}
             selectedKeys={[current]}
             mode="horizontal"
+            multiple
             items={CategoriasItemDesplegable}
           />
           {/* <Button className="button">

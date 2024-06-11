@@ -21,7 +21,8 @@ header {
 }
 /* Botones */
 .buttons {
-  display: flex;
+  display: block;
+  width: 22.5%;
   gap: 20px;
 }
 

@@ -8,6 +8,10 @@ export const CategoriasItemDesplegable = [
     key: "2",
     label: "Regalos",
   },
+  {
+    key: "3",
+    label: "Biodegradables",
+  },
 ];
 
 export const EmpresasItemDesplegable = [

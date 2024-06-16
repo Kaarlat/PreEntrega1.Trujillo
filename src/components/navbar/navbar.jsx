@@ -21,7 +21,7 @@ export const Navbar = () => {
         navigate("/categorias/regalos");
         break;
         case "3":
-        navigate("/categorias/biodegradable");
+        navigate("/categorias/empresas");
         break;
       default:
         break;

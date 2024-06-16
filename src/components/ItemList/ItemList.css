@@ -1,5 +1,9 @@
 .container{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    gap: 3rem;
 }
 
 .card {
@@ -11,7 +15,7 @@
     width: 300px;
     margin: 16px;
     text-align: center;
-    background-color: #fff;
+    background-color: #ffffff;
     transition: transform 0.2s;
   }
   
@@ -24,7 +28,7 @@
     background-color: #f8f8f8;
     padding: 8px;
     font-size: 14px;
-    color: #888;
+    color: #888888;
     font-weight: bold;
   }
   
@@ -45,13 +49,13 @@
   /* Precio del producto */
   .card div:nth-child(4) {
     font-size: 16px;
-    color: #888;
+    color: #403608;
     padding: 8px 0;
   }
   
   /* Botón de la tarjeta */
   .btn-card {
-    background-color: #007bff;
+    background-color: #e68d10;
     color: white;
     border: none;
     border-radius: 4px;
@@ -61,6 +65,6 @@
   }
   
   .btn-card:hover {
-    background-color: #0056b3;
+    background-color: #5b4116;
   }
   

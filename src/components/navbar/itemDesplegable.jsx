@@ -10,6 +10,6 @@ export const CategoriasItemDesplegable = [
   },
   {
     key: "3",
-    label: "Biodegradable",
+    label: "Empresas",
   },
 ];

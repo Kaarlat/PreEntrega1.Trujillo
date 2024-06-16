@@ -24,8 +24,8 @@ export const ItemListContainer = () => {
             case "/categorias/regalos":
                 setProducts(res.filter(p => p.category === "Regalos"))
             break;
-            case "/categorias/biodegradable":
-                setProducts(res.filter(p => p.category === "Biodegradable"))
+            case "/categorias/empresas":
+                setProducts(res.filter(p => p.category === "Empresas"))
             break;
         
             default:setProducts(res)

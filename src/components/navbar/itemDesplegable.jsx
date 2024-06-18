@@ -2,7 +2,7 @@
 export const CategoriasItemDesplegable = [
   {
     key: "1",
-    label: "Figuras personalizadas",
+    label: "Figuras",
   },
   {
     key: "2",

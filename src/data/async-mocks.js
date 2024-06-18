@@ -2,7 +2,7 @@
 export const productList =[
     {
         id: 1,
-        category: "Figuras personalizadas",
+        category: "Figuras",
         description: "Personaliza tu figura 3D a tu gusto y medida, elige cada detalle de lo que deseas obtener",
         img: "/figure1.png",
         name: "Basadas en ilustraciones",
@@ -10,7 +10,7 @@ export const productList =[
     },
     {
         id: 2,
-        category: "Figuras personalizadas",
+        category: "Figuras",
         description: "Figuras de superhéroes impresas en 3D: captura el poder y la esencia de tus héroes favoritos con detalle y calidad excepcionales.",
         img: "/figure2.png",
         name: "Superhéroes",
@@ -50,11 +50,14 @@ export const productList =[
     },
 ]
 
- export const getProducts = () => {
+ export const getProducts = (idCategory) => {
+
+    const list = idCategory ? productList.filter(product => product.category === idCategory) : productList
+
     return new Promise((resolve, reject)  => {
         setTimeout(() => {
             productList.length > 0 ?
-                resolve(productList)
+                resolve(list)
                 :
                 reject("No hay datos")
         }, 500

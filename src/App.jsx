@@ -14,12 +14,8 @@ const App = () => {
 
         <Navbar handleCategoria={setCategoria} />
         <Routes>
-          <Route path="/categorias" element={<ItemListContainer/>}/>
-          <Route path="/categorias/figuras" element={<ItemListContainer />}/>
-          <Route path="/categorias/regalos" element={<ItemListContainer />}/>
-          <Route path="/categorias/empresas" element={<ItemListContainer />}/>
-
-          {/* <Route path="/" element={<ItemListContainer />}></Route> */}
+          <Route path="/" element={<ItemListContainer/>}/>
+          <Route path="/categorias/:idCategory" element={<ItemListContainer />}/>
         </Routes>
 
       </BrowserRouter>

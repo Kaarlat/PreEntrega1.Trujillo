@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import { Menu } from "antd";
 import { CategoriasItemDesplegable } from "./itemDesplegable";
-import { CartWidget } from "../cartwidget/cartwidget";
-import { Link, useLocation } from "react-router-dom";
+import { CartWidget } from "../../components/cartwidget/cartwidget";
+import { Link } from "react-router-dom";
 
 // Si exporto desde el inicio se debe importar con llaves {}
 export const Navbar = () => {
-  const location = useLocation();
   const [current, setCurrent] = useState("0");
 
   const onClick = (e) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import '../navbar/navbar.css';
+import '../../containers/navbar/navbar.css';
 import {ShoppingCartOutlined} from '@ant-design/icons';
 import { Badge, Space } from 'antd';
 

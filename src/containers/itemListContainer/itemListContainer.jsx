@@ -1,5 +1,5 @@
 // css desde navbar.css
-import "../../components/navbar/navbar.css";
+import "../navbar/navbar.css";
 import React, { useEffect, useState } from "react";
 import { getProducts } from "../../data/async-mocks";
 import { ItemList } from "../../components/ItemList/ItemList";

@@ -50,17 +50,22 @@ export const productList =[
     },
 ]
 
- export const getProducts = (idCategory) => {
-
-    const list = idCategory ? productList.filter(product => product.category === idCategory) : productList
-
-    return new Promise((resolve, reject)  => {
+// Función para obtener todos los productos o filtrarlos por categoría
+export const getProducts = (idCategory) => {
+    const list = idCategory ? productList.filter(product => product.category === idCategory) : productList;
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            productList.length > 0 ?
-                resolve(list)
-                :
-                reject("No hay datos")
-        }, 500
-        )
-    })
-}
+            list.length > 0 ? resolve(list) : reject("No hay datos");
+        }, 500);
+    });
+};
+
+// Función para obtener un producto por su ID
+export const getProductById = (id) => {
+    const product = productList.find(p => p.id === parseInt(id));
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            product ? resolve(product) : reject("Producto no encontrado");
+        }, 500);
+    });
+};

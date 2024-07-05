@@ -11,7 +11,6 @@ export const cart = () => {
   };
 
   const handleCheckout = () => {
-    // Lógica de compra
   };
 
   return (

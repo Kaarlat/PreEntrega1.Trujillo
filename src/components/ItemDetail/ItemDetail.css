@@ -33,6 +33,7 @@
 .item-detail-info {
   display: flex;
   flex-direction: column;
+  color: #5f3407;
   justify-content: center;
   gap: 1rem;
   flex: 1;
@@ -64,20 +65,22 @@
 .quantity-button {
   border-radius: 4px;
   padding: 0.5rem;
+  color: #fff !important;
+  background-color: #d36e00 !important;
 }
 
 .btn-add-to-cart {
-  background-color: #e68d10;
-  border-color: #e68d10;
-  width: 100%;
+  background-color: #e68d10 !important;
+  border-color: #e68d10 !important;
+  width: 25%;
   padding: 0.5rem;
   font-size: 16px;
   border-radius: 8px;
 }
 
 .btn-add-to-cart:hover {
-  background-color: #d36e00;
-  border-color: #d36e00;
+  background-color: #d36e00 !important;
+  border-color: #d36e00 !important;
 }
 
 /* Responsive */

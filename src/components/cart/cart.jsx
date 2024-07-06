@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
-import toast from 'react-hot-toast';
 import './Cart.css';
 
 export const Cart = () => {
   const { cart, clearCart, removeItem } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const totalAmount = cart.reduce((acc, item) => acc + (item.price || 0) * (item.quantity || 0), 0);
 
@@ -13,7 +14,12 @@ export const Cart = () => {
   };
 
   const handlePay = () => {
-    toast.success('¡Felicitaciones! Tu pago ha sido realizado con éxito.');
+    if (cart.length === 0) {
+      toast.error('Tu carrito está vacío.');
+      return;
+    }
+
+    navigate('/checkout');
   };
 
   const handleRemoveItem = (itemId) => {

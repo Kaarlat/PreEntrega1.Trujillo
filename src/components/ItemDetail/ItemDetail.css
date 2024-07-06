@@ -28,7 +28,7 @@
 
 .item-detail-info h2 {
   font-size: 2rem;
-  color: #e68d10; /* Color anaranjado */
+  color: #e68d10; 
   margin-bottom: 1rem;
 }
 
@@ -47,7 +47,7 @@
 .item-detail-info .price {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #403608; /* Color del precio */
+  color: #403608; 
   margin-bottom: 1rem;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .item-detail-actions button {
-  background-color: #e68d10; /* Color de fondo del botón */
+  background-color: #e68d10;
   color: white;
   border: none;
   border-radius: 4px;
@@ -69,19 +69,21 @@
 }
 
 .item-detail-actions button:hover {
-  background-color: #d66b00; /* Color de fondo en hover */
+  background-color: #d66b00; 
 }
 
 .item-detail-actions button:disabled {
-  background-color: #ccc; /* Color de fondo para el botón deshabilitado */
+  background-color: #ccc; 
   cursor: not-allowed;
 }
 
 .item-detail-actions span {
   font-size: 1.25rem;
+  display: inline-block;
   font-weight: bold;
   color: #333;
-  margin: 0 1rem;
+  padding-top: 0.7rem;
+  margin: 2rem;
 }
 
 .add-to-cart-button {

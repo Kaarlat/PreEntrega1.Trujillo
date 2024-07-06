@@ -5,6 +5,8 @@ import './Cart.css';
 export const Cart = () => {
   const { cart, clearCart } = useContext(CartContext);
 
+  const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
   const handleClearCart = () => {
     clearCart();
   };
@@ -18,14 +20,14 @@ export const Cart = () => {
         <div>
           {cart.map((item) => (
             <div key={item.id} className="cart-item">
-              <img src={item.img} alt={item.name} />
-              <div>
-                <h3>{item.name}</h3>
-                <p>Price: ${item.price}</p>
-                <p>Quantity: {item.quantity}</p>
-              </div>
+              <div className="item-name">{item.name}</div>
+              <div className="item-price">${(item.price * item.quantity).toFixed(2)}</div>
             </div>
           ))}
+          <div className="cart-total">
+            <h3>Total:</h3>
+            <span>${totalAmount.toFixed(2)}</span>
+          </div>
           <button onClick={handleClearCart}>Vaciar Carrito</button>
         </div>
       )}

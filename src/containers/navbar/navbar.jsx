@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import { Menu } from "antd";
 import { CategoriasItemDesplegable } from "./itemDesplegable";
-import { CartWidget } from "../../components/CartWidget/CartWidget";
+import { CartWidget } from '../../components/CartWidget/CartWidget';
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {

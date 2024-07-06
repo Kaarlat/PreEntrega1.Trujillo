@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import { Menu } from "antd";
 import { CategoriasItemDesplegable } from "./itemDesplegable";
-import { CartWidget } from "../../components/cartwidget/cartwidget";
+import { CartWidget } from "../../components/CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
-// Si exporto desde el inicio se debe importar con llaves {}
 export const Navbar = () => {
   const [current, setCurrent] = useState("0");
 
@@ -27,24 +26,23 @@ export const Navbar = () => {
         </Link>
         <p>Impresiones 3D</p>
         <div className="buttons">
-        <Menu
-          onClick={onClick}
-          selectedKeys={[current]}
-          mode="horizontal"
-          multiple
-          items={CategoriasItemDesplegable.map((item) => ({
-            key: item.label,
-            label: (
-              <Link
-                to={`/categorias/${item.label}`}
-                onClick={() => setCurrent(item.label)}
-        >
-        {item.label}
-      </Link>
-    ),
-  }))}
-  />
-
+          <Menu
+            onClick={onClick}
+            selectedKeys={[current]}
+            mode="horizontal"
+            multiple
+            items={CategoriasItemDesplegable.map((item) => ({
+              key: item.label,
+              label: (
+                <Link
+                  to={`/categorias/${item.label}`}
+                  onClick={() => setCurrent(item.label)}
+                >
+                  {item.label}
+                </Link>
+              ),
+            }))}
+          />
         </div>
         <CartWidget />
       </nav>

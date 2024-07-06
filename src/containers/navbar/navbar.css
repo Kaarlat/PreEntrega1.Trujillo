@@ -60,14 +60,6 @@ header {
   border-color: rgba(91, 58, 6, 0.699);
 }
 
-/* Carrito */
-.cartWidget {
-  margin-right: 5rem;
-  margin-left: 0rem;
-  font-size: 2rem;
-  color: rgb(93, 65, 22);
-}
-
 /*Productos*/
 .products{
   text-align: center;

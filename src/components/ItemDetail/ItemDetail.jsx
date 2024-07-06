@@ -1,57 +1,29 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from 'react';
+import { CartContext } from '../../Context/CartContext';
 import './ItemDetail.css';
-import { Button } from 'antd';
-import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 
-export const ItemDetail = ({ id, category, description, img, name, price }) => {
-    const [quantity, setQuantity] = useState(1);
-    const maxStock = 10;
+export const ItemDetail = ({ item }) => {
+  const { addItemToCart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
 
-    const handleIncrement = () => {
-        if (quantity < maxStock) {
-            setQuantity(quantity + 1);
-        }
-    };
+  const handleAddToCart = () => {
+    addItemToCart(item, quantity);
+  };
 
-    const handleDecrement = () => {
-        if (quantity > 1) {
-            setQuantity(quantity - 1);
-        }
-    };
-
-    return (
-        <div className="item-detail-card">
-            <div className="item-detail-content">
-                <img src={img} alt={name} className="item-detail-img" />
-                <div className="item-detail-info">
-                    <h2>{name}</h2>
-                    <div className="item-detail-category">{category}</div>
-                    <p className="item-detail-description">{description}</p>
-                    <p className="item-detail-price">{price}</p>
-                    <div className="item-detail-quantity">
-                        <Button 
-                            className="quantity-button"
-                            onClick={handleDecrement} 
-                            icon={<MinusOutlined />} 
-                            disabled={quantity <= 1}
-                        />
-                        <span>{quantity}</span>
-                        <Button 
-                            className="quantity-button"
-                            onClick={handleIncrement} 
-                            icon={<PlusOutlined />} 
-                            disabled={quantity >= maxStock}
-                        />
-                    </div>
-                    <Button
-                        className="btn-add-to-cart"
-                        type="primary"
-                        size="large"
-                    >
-                        Agregar al carrito
-                    </Button>
-                </div>
-            </div>
+  return (
+    <div className="item-detail">
+      <img className="item-detail-image" src={item.img} alt={item.name} />
+      <div className="item-detail-info">
+        <h2>{item.name}</h2>
+        <p>{item.description}</p>
+        <p>Price: ${item.price}</p>
+        <div className="item-detail-actions">
+          <button onClick={() => setQuantity(quantity - 1)} disabled={quantity <= 1}>-</button>
+          <span>{quantity}</span>
+          <button onClick={() => setQuantity(quantity + 1)} disabled={quantity >= item.stock}>+</button>
+          <button className="add-to-cart-button" onClick={handleAddToCart}>Agregar al carrito</button>
         </div>
-    );
+      </div>
+    </div>
+  );
 };

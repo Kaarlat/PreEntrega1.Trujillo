@@ -1,22 +1,24 @@
-// Importar con llave si el export está al inicio
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "../src/containers/navbar/navbar";
-import { ItemListContainer } from "./containers/ItemListContainer/itemListContainer";
-import { ItemDetailContainer } from "./containers/ItemDetailContainer/ItemDetailContainer";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Navbar } from './containers/navbar/navbar';
+import { ItemListContainer } from '../src/containers/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from '../src/containers/ItemDetailContainer/ItemDetailContainer';
+// import { Cart } from '../src/components/cart/cart';
+import { CartProvider } from './Context/CartContext';
 
 const App = () => {
-  const [categoria, setCategoria] = useState("/categorias");
-
   return (
-    <BrowserRouter>
-      <Navbar handleCategoria={setCategoria} />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/categorias/:idCategory" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
-      </Routes>
-    </BrowserRouter>
+    <Router>
+      <CartProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/categorias/:category" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
+        </Routes>
+      </CartProvider>
+    </Router>
   );
 };
 

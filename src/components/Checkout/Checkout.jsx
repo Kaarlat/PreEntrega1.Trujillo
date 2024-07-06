@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { CheckoutForm } from '../CheckoutForm/CheckoutForm';
 import { CartContext } from '../../Context/CartContext';
-import { db, collection, Timestamp, writeBatch, addDoc } from 'firebase/firestore';
+import { collection, Timestamp, writeBatch, addDoc } from 'firebase/firestore';
 import toast from 'react-hot-toast';
 import './Checkout.css';
 
